@@ -1,0 +1,33 @@
+name: efi-tools-ijohnson
+base: core20
+version: "0.1"
+summary: UEFI tools
+description: |
+  A devmode snap used to test various efi things in an ubuntu core system. 
+  Probably could be strict at some point, needs additional accesses beyond 
+  system-observe.
+
+grade: stable
+confinement: devmode
+
+apps:
+  efivar:
+    command: usr/bin/efivar
+    plugs:
+      - system-observe
+  efibootmgr:
+    command: bin/efibootmgr
+    plugs:
+      - system-observe
+  efibootdump:
+    command: bin/efibootdump
+    plugs:
+      - system-observe
+
+parts:
+  my-part:
+    # See 'snapcraft plugins'
+    plugin: nil
+    stage-packages:
+      - efivar
+      - efibootmgr
