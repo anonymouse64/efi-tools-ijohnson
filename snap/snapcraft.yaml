@@ -7,6 +7,12 @@ description: |
   Probably could be strict at some point, needs additional accesses beyond 
   system-observe.
 
+# not available on s390x or ppc64el
+architectures:
+  - build-on: amd64
+  - build-on: armhf
+  - build-on: arm64
+
 grade: stable
 confinement: devmode
 
