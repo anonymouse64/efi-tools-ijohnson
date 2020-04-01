@@ -1,0 +1,6 @@
+# snap things
+stage/
+parts/
+prime/
+*.snap
+*.assert
